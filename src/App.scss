@@ -1,0 +1,103 @@
+$gray: #dfdddd;
+$secondary: #8a1dd7;
+$secondary-light: #9b50d1;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $gray;
+}
+
+.hsm {
+  font-size: 18px;
+}
+
+.hmd {
+  font-size: 1.5rem;
+}
+
+.align-center {
+  align-items: center;
+}
+
+#sidebar {
+  height: 100vh;
+}
+
+#closebtn {
+  font-size: 1.3rem;
+}
+
+.btn_primary {
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  background: $secondary;
+  color: white;
+  padding: 10px 1.5rem;
+  transition: 0.3s ease;
+}
+
+.btn_primary:hover {
+  background: $secondary-light;
+}
+
+.btn_primary:active {
+  transform: scale(1.1);
+}
+
+.align-center {
+  align-items: center;
+}
+
+.put-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_page {
+  margin-left: 21%;
+
+  @media screen and (max-width: 1023px) {
+    margin-left: 35%;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.addform {
+  label {
+    font-weight: bold;
+  }
+}
+
+.contests_container {
+  height: 55vh;
+  overflow-y: scroll;
+  padding: 0 1rem 0 0;
+}
+
+#contest_status {
+  h1 {
+    border: 1.8px solid transparent;
+
+    &.Closed {
+      border-color: #ba004d;
+      color: #ba004d;
+    }
+    &.Ongoing {
+      border-color: #03975c;
+      color: #03975c;
+    }
+    &.Coming {
+      border-color: #cea800;
+      color: #e7d300;
+    }
+  }
+}
