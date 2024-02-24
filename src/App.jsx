@@ -22,7 +22,7 @@ function App() {
 
   return (
     <Router>
-      <header className="bg-white w-full p-5">
+      <header className="bg-white w-full m-5">
         <div
           id="menubtn"
           className="md:hidden cursor-pointer"
