@@ -9,6 +9,8 @@ import home from './home.png'
 import logo from './logo.png'
 import records from './records.png'
 import stats from './stats.png'
+import profile1  from './profile1.png'
+
 export
 {
     activity,
@@ -22,5 +24,6 @@ export
     logo,
     records,
     stats,
+    profile1,
 
 }
