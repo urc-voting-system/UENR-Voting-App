@@ -19,7 +19,7 @@ const Sidebar = ({ closeSidebar, sidebarStatus }) => {
       <div>
         <div className="flex align-center space-x-2 mb-5 relative">
           <img src={logo} alt="logo" className="w-10 h-10" />
-          <h5>UENR Voting App</h5>
+          <h5 className="text-xl font-semibold p-5">UENR Voting App</h5>
           <div
             id="closebtn"
             className="absolute top-0 right-0 font-bold cursor-pointer md:hidden"
