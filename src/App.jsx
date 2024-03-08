@@ -6,6 +6,7 @@ import Contest from "./Pages/Contest";
 import Candidates from "./Pages/Candidates";
 import Missing from "./Pages/Missing";
 import Statistics from "./Pages/Statistics";
+import { contestsData } from "./Data/contests";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,14 +23,10 @@ function App() {
 
   return (
     <Router>
-      <header className="bg-white w-full m-5">
-        <div
-          id="menubtn"
-          className="md:hidden cursor-pointer"
-          onClick={openSidebar}
-        >
+      <header className="shadow-md">
+        <span className="menubtn" onClick={openSidebar}>
           &#9776;
-        </div>
+        </span>
       </header>
       <Routes>
         <Route path="/">
@@ -58,11 +55,12 @@ function App() {
             }
           />
           <Route
-            path={"candidates"}
+            path={"candidates/:id"}
             element={
               <Candidates
                 sidebarStatus={sidebarStatus}
                 closeSidebar={closeSidebar}
+                contestsData={contestsData}
               />
             }
           />

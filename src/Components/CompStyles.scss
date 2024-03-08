@@ -1,0 +1,80 @@
+#sidebar {
+  background: white;
+  transition: 0.4s ease;
+
+  #closebtn {
+    display: none;
+  }
+
+  @media screen and (max-width: 1000px) {
+    left: -100%;
+
+    &.active {
+      left: 0;
+      width: 50%;
+
+      @media screen and (max-width: 700px) {
+        width: 90%;
+      }
+    }
+
+    &.closed {
+      left: -100%;
+    }
+
+    #closebtn {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.contests_container {
+  height: 55vh;
+  overflow-y: scroll;
+  padding: 0 1rem 0 0;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.408);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8a1dd7;
+  }
+
+  #contest_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    #contest_box {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.candidates_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  // @media screen and (max-width: 400px) {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
+}

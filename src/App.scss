@@ -60,29 +60,6 @@ body {
   justify-content: center;
 }
 
-.main_page {
-  margin-left: 21%;
-
-  @media screen and (max-width: 1023px) {
-    margin-left: 35%;
-  }
-  @media screen and (max-width: 768px) {
-    margin-left: 0;
-  }
-}
-
-.addform {
-  label {
-    font-weight: bold;
-  }
-}
-
-.contests_container {
-  height: 55vh;
-  overflow-y: scroll;
-  padding: 0 1rem 0 0;
-}
-
 #contest_status {
   h1 {
     border: 1.8px solid transparent;
@@ -98,6 +75,38 @@ body {
     &.Coming {
       border-color: #cea800;
       color: #e7d300;
+    }
+  }
+}
+
+header {
+  display: none;
+
+  .menubtn {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 1000px) {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    .menubtn {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .menubtn {
+      font-size: 1.2rem;
     }
   }
 }

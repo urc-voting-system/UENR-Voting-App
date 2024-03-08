@@ -1,4 +1,4 @@
-import React from "react";
+import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,9 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
               incidunt minima exercitationem.
             </p>
-            <button className="btn_primary float-right">Vote</button>
+            <Link to="/contests" className="btn_primary float-right">
+              Vote
+            </Link>
           </div>
         </div>
       </div>
