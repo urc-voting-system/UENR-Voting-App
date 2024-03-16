@@ -93,7 +93,7 @@ const Voteme = () => {
           value={voteCount}
           onChange={(e) => setVoteCount(e.target.value)}
           min="1"
-          className="mt-2 border rounded p-1 w-full"
+          className="mt-2  border rounded p-1 w-full"
         />
       </Popup>
     </div>
