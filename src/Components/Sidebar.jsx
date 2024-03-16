@@ -35,7 +35,7 @@ const Sidebar = ({ closeSidebar, sidebarStatus }) => {
             className="hover:bg-gray-200 rounded-md my-3 py-4 px-2 flex space-x-3 cursor-pointer"
           >
             <img src={home} alt="" />
-            <p>Home</p>
+            <p>Events</p>
           </Link>
           <Link
             to={"/contests"}

@@ -10,6 +10,7 @@ import logo from './logo.png'
 import records from './records.png'
 import stats from './stats.png'
 import profile1  from './profile1.png'
+import img from './img.png'
 
 export
 {
@@ -25,5 +26,6 @@ export
     records,
     stats,
     profile1,
+    img,
 
 }

@@ -1,31 +1,44 @@
 import React from "react";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+import { img } from "../assets/index";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
+  // EventsData =[
+  //   {
+  //     'image': "url",
+  //     'title': "Event Name",
+  //   },
+  //   {
+  //     'image': "url",
+  //     'title': "Event Name",
+  //   },
+  // ]
+
   return (
     <div className="home">
       <Sidebar sidebarStatus={sidebarStatus} closeSidebar={closeSidebar} />
 
-      <div className="main_page">
-        <div className="grid grid-col-1 lg:grid-cols-2 gap-3 mt-3 sm:mt-5 p-5 sm:p-7">
-          <div className="bg-white shadow-md rounded-sm p-7">
-            <h1 className="hsm font-bold">Awards Nomination Form</h1>
-            <p className="text-gray-500 my-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              incidunt minima exercitationem.
-            </p>
-            <Link to={"/addform"} className="btn_primary float-right">
-              Fill Form
-            </Link>
+      <div className="main_page p-10">
+        <div className="top-bar">
+          <h1 className="font-bold text-2xl pb-10">Ongoing Events</h1>
+          <div className="search-bar w-full ">
+            <input
+              type="text"
+              className="w-full h-14 rounded-3xl border-2 border-[#474747] bg-transparent px-3 outline-none"
+              placeholder="Enter event name...  "
+            />
           </div>
-          <div className="bg-white shadow-md rounded-sm p-7">
-            <h1 className="hsm font-bold">Cast Votes</h1>
-            <p className="text-gray-500 my-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-              incidunt minima exercitationem.
-            </p>
-            <button className="btn_primary float-right">Vote</button>
+
+          <div className="Events-Contianer pt-10">
+           <div className="bg-white rounded-xl w-60 h-auto object-contain p-10">
+            <div>
+              <img src={img} alt="" />
+            </div>
+            <h2 className="font-semibold text-xl">Event Name</h2>
+            <button className="bg-">View Cartegories</button>
+           </div>
           </div>
         </div>
       </div>
