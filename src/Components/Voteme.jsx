@@ -12,7 +12,7 @@ const Popup = ({ isOpen, onClose, onVote, children }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+      className="fixed inset-1 bg-gray-900 bg-opacity-50 overflow-y-auto h-full w-full"
       onClick={onClose}
     >
       <div
@@ -88,13 +88,17 @@ const Voteme = () => {
         className=""
       >
         <h2 className="text-lg font-semibold text-center">Number Of Votes</h2>
+        <input type="tel" placeholder="+233 (0)12 345 6789"
+          className="mt-2  border rounded p-1 w-full"
+         />
         <input
           type="number"
           value={voteCount}
           onChange={(e) => setVoteCount(e.target.value)}
           min="1"
           className="mt-2  border rounded p-1 w-full"
-        />
+          />
+      
       </Popup>
     </div>
   );
