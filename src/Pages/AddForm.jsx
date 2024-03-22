@@ -20,11 +20,11 @@ const AddForm = ({ sidebarStatus, closeSidebar }) => {
       <Sidebar sidebarStatus={sidebarStatus} closeSidebar={closeSidebar} />
 
       <div className="main_page">
-        <form
-          onSubmit={handleFormSubmit}
-          className="grid grid-col-1 lg:grid-cols-2 gap-3 mt-3 sm:mt-5 p-5 sm:p-7"
-        >
-          <div className="bg-white shadow-md rounded-sm p-7 flex flex-col justify-start align-left">
+        <form id="addForm" onSubmit={handleFormSubmit}>
+          <div
+            id="box"
+            className="bg-white shadow-md rounded-sm flex flex-col justify-start align-left"
+          >
             <div className="w-20 h-20 bg-violet-600 rounded-full mx-auto my-0">
               {profile}
             </div>
@@ -62,7 +62,10 @@ const AddForm = ({ sidebarStatus, closeSidebar }) => {
               <option value="female">Female</option>
             </select>
           </div>
-          <div className="bg-white shadow-md rounded-sm p-7 flex flex-col justify-start align-left">
+          <div
+            id="box"
+            className="bg-white shadow-md rounded-sm flex flex-col justify-start align-left"
+          >
             <label>Choose Award Category</label>
             <select className="bg-gray-200 mt-2 p-2">
               <option value="">Select Option</option>

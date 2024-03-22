@@ -2,36 +2,13 @@ import { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import logo from "../assets/logo.png";
 import ContestsTable from "../Components/ContestsTable";
+import { contestsData } from "../Data/contests";
 
 const Contest = ({ sidebarStatus, closeSidebar }) => {
-  const [contests, setContests] = useState([
-    {
-      id: 1,
-      day: "Friday",
-      date: "13th February, 2024",
-      status: "In Progress",
-      status_id: "Ongoing",
-      title: "Best Programmer",
-    },
-    {
-      id: 2,
-      day: "Monday",
-      date: "17th February, 2024",
-      status: "Coming Soon",
-      status_id: "Coming",
-      title: "Most Elagant Male",
-    },
-    {
-      id: 3,
-      day: "Saturday",
-      date: "23rd February, 2024",
-      status: "Closed",
-      status_id: "Closed",
-      title: "Best Photographer",
-    },
-  ]);
+  const [contests, setContests] = useState(contestsData);
+
   return (
-    <div className="addform">
+    <div>
       <Sidebar sidebarStatus={sidebarStatus} closeSidebar={closeSidebar} />
 
       <div className="main_page">

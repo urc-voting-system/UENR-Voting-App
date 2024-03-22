@@ -1,10 +1,10 @@
-import React from "react";
+import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import image from "../assets/image.png";
 import img from "../assets/img.png";
-import try1 from '../assets/try1.png'
+import try1 from "../assets/try1.png";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
   const eventData = [
@@ -19,11 +19,11 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
     {
       image: try1,
       title: "Elesa Awards",
-    },  {
+    },
+    {
       image: try1,
       title: "GHIE Awards",
     },
-    
   ];
 
   return (
@@ -54,13 +54,23 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
                   <h2 className="font-semibold text-xl">{event.title}</h2>
                   <div className="">
                     <button className="p-3 text-xl font-semibold flex  justify-center items-center gap-4 text-black ">
-                      <FaArrowRight/>
+                      <FaArrowRight />
                       View Categories
                     </button>
                   </div>
                 </div>
               </div>
             ))}
+            <div className="bg-white shadow-md rounded-sm p-7">
+              <h1 className="hsm font-bold">Cast Votes</h1>
+              <p className="text-gray-500 my-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                incidunt minima exercitationem.
+              </p>
+              <Link to="/contests" className="btn_primary float-right">
+                Vote
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import "./CompStyles.scss";
 import logo from "../assets/logo.png";
 import home from "../assets/home.png";
 import crown from "../assets/crown.png";
@@ -12,8 +12,8 @@ const Sidebar = ({ closeSidebar, sidebarStatus }) => {
   return (
     <aside
       id="sidebar"
-      className={`md:w-1/3 lg:w-1/5 fixed top-0 left-0 z-10 bg-white p-3 shadow-md md:flex justify-between flex-col ${
-        sidebarStatus == "open" ? "flex w-2/3 sm:w-1/3" : "hidden"
+      className={`w-1/5 fixed top-0 left-0 z-10 p-3 shadow-md md:flex justify-between flex-col ${
+        sidebarStatus == "open" ? "active" : "closed"
       }`}
     >
       <div>
@@ -22,7 +22,7 @@ const Sidebar = ({ closeSidebar, sidebarStatus }) => {
           <h5 className="text-xl font-semibold p-5">UENR Voting App</h5>
           <div
             id="closebtn"
-            className="absolute top-0 right-0 font-bold cursor-pointer md:hidden"
+            className="top-0 right-0 font-bold cursor-pointer"
             onClick={closeSidebar}
           >
             &times;

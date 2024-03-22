@@ -1,0 +1,70 @@
+.main_page {
+  margin-left: 21%;
+
+  #addForm {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 3rem 0 1rem;
+
+    input {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    #box {
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin-left: 0;
+    padding-top: 4rem;
+    width: 100%;
+
+    #addForm {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+
+      #box {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    #addForm {
+      padding: 0;
+
+      #box {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.contest_info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1000px) {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+}
