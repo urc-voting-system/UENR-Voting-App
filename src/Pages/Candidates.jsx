@@ -9,6 +9,11 @@ const Candidates = ({ sidebarStatus, closeSidebar, contestsData }) => {
   const { id } = useParams();
   const contest = contestsData.find((contest) => contest.id == id);
 
+  if (!contest) {
+    // Handle case when contest is not found
+    return <div>Error: Contest not found</div>;
+  }
+
   return (
     <div className="addform">
       <Sidebar sidebarStatus={sidebarStatus} closeSidebar={closeSidebar} />
@@ -31,25 +36,25 @@ const Candidates = ({ sidebarStatus, closeSidebar, contestsData }) => {
 
           <div className="contest_info">
             <StatTable
-              id="contest_info_box"
+              id="contest_description"
               title="Description"
               icon={edit}
               desc={contest.title}
             />
             <StatTable
-              id="contest_info_box"
-              title="Candidates "
+              id="contest_candidates"
+              title="Candidates"
               icon={users}
-              desc={`${contest.candidates.length} condidates`}
+              desc={`${contest.candidates.length} candidates`}
             />
             <StatTable
-              id="contest_info_box"
+              id="contest_due_date"
               title="Due Date"
               icon={calendar}
               desc={contest.date}
             />
             <StatTable
-              id="contest_info_box"
+              id="contest_status"
               title="Status"
               icon={activity}
               desc={contest.status}
@@ -63,4 +68,5 @@ const Candidates = ({ sidebarStatus, closeSidebar, contestsData }) => {
     </div>
   );
 };
+
 export default Candidates;
