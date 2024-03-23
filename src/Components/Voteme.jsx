@@ -1,11 +1,6 @@
 import { useState } from "react";
 import "./CompStyles.scss";
-
-// const profiles = [
-//   { id: 1, name: "Amanda Gordon", image: profile1, votes: 0 },
-//   { id: 2, name: "James Smith", image: profile1, votes: 0 },
-//   { id: 3, name: "Patricia Johnson", image: profile1, votes: 0 },
-// ];
+import { PaystackButton } from "react-paystack";
 
 const Popup = ({ isOpen, onClose, onVote, children }) => {
   if (!isOpen) return null;
@@ -88,17 +83,18 @@ const Voteme = ({ candidates, status }) => {
         className=""
       >
         <h2 className="text-lg font-semibold text-center">Number Of Votes</h2>
-        <input type="tel" placeholder="+233 (0)12 345 6789"
+        <input
+          type="tel"
+          placeholder="+233 (0)12 345 6789"
           className="mt-2  border rounded p-1 w-full"
-         />
+        />
         <input
           type="number"
           value={voteCount}
           onChange={(e) => setVoteCount(e.target.value)}
           min="1"
           className="mt-2  border rounded p-1 w-full"
-          />
-      
+        />
       </Popup>
     </div>
   );
