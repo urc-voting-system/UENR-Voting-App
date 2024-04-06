@@ -1,19 +1,30 @@
-import { useState, useEffect } from "react";
 import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
-// import try1 from "../assets/try1.png";
+// import image from "../assets/image.png";
+// import img from "../assets/img.png";
+import try1 from "../assets/try1.png";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
-  const [eventData, setEventData] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/events/")
-      .then((response) => response.json())
-      .then((data) => setEventData(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  const eventData = [
+    {
+      image: try1,
+      title: "Kandema Gospel Awards",
+    },
+    {
+      image: try1,
+      title: "URC awards",
+    },
+    {
+      image: try1,
+      title: "Elesa Awards",
+    },
+    {
+      image: try1,
+      title: "GHIE Awards",
+    },
+  ];
 
   return (
     <div className="home">
@@ -30,33 +41,34 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
             />
           </div>
 
-          <div className="Events-Contianer pt-10 grid  grid-cols-1 lg:grid-cols-4  md:grid-cols-2 gap-10">
-            {eventData.map((event, index) => (
-              <div
-                key={index}
-                className="bg-transparent  rounded-xl w-60 h-auto object-contain"
-              >
-                <div className="">
-                  <img src={event.image} alt="" />
-                </div>
-                <div className="sub  p-2 ">
-                  <h2 className="font-semibold text-xl">{event.title}</h2>
+          <div className="flex justify-center items-center">
+            <div className="Events-Contianer pt-10 grid  grid-cols-1 lg:grid-cols-4  md:grid-cols-3  gap-10 ">
+              {eventData.map((event, index) => (
+                <div
+                  key={index}
+                  className="bg-transparent  rounded-xl w-60 h-auto object-contain"
+                >
                   <div className="">
-                    <button className="p-3 text-xl font-semibold flex  justify-center items-center gap-4 text-black ">
-                      <FaArrowRight />
-                      <Link to="/contests" className="">
-                        View Categories
-                      </Link>
-                    </button>
+                    <img src={event.image} alt="" />
+                  </div>
+                  <div className="sub  p-2 ">
+                    <h2 className="font-semibold text-xl">{event.title}</h2>
+                    <div className="">
+                      <button className="p-3 text-xl font-semibold flex  justify-center items-center gap-4 text-black ">
+                        <FaArrowRight />
+                        <Link to="/contests" className="">
+                          View Categories
+                        </Link>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
 export default Home;

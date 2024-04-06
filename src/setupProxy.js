@@ -5,7 +5,7 @@ module.exports = function (app) {
         '/api',
         createProxyMiddleware({
             target: 'https://michaelangelo360.pythonanywhere.com',
-            changeOrigin: true,
+            changeOrigin: true, 
         })
     );
 };
