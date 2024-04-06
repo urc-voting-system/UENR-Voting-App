@@ -3,7 +3,7 @@ import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
-import try1 from "../assets/try1.png";
+// import try1 from "../assets/try1.png";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
   const [eventData, setEventData] = useState([]);
