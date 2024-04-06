@@ -1,30 +1,19 @@
+import { useState, useEffect } from "react";
 import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
-// import image from "../assets/image.png";
-// import img from "../assets/img.png";
 import try1 from "../assets/try1.png";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
-  const eventData = [
-    {
-      image: try1,
-      title: "Kandema Gospel Awards",
-    },
-    {
-      image: try1,
-      title: "URC awards",
-    },
-    {
-      image: try1,
-      title: "Elesa Awards",
-    },
-    {
-      image: try1,
-      title: "GHIE Awards",
-    },
-  ];
+  const [eventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/events/")
+      .then((response) => response.json())
+      .then((data) => setEventData(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   return (
     <div className="home">
@@ -49,7 +38,7 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
               >
                 <div className="">
                   <img src={event.image} alt="" />
-                </div>  
+                </div>
                 <div className="sub  p-2 ">
                   <h2 className="font-semibold text-xl">{event.title}</h2>
                   <div className="">
@@ -69,4 +58,5 @@ const Home = ({ sidebarStatus, closeSidebar }) => {
     </div>
   );
 };
+
 export default Home;
