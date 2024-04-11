@@ -1,9 +1,9 @@
 import "./CompStyles.scss";
 import { Link } from "react-router-dom";
 
-const ContestsTable = ({ contests }) => {
+const Cartegories = ({ contests }) => {
   return (
-    <main className="contestsTable my-10">
+    <main className="Cartegories my-10">
       <div className="bg-white grid grid-cols-3 my-4 py-2 rounded-t-md">
         <h1 className="hsm text-center">Position</h1>
         <h1 className="hsm text-center">Due Date</h1>
@@ -44,4 +44,4 @@ const ContestsTable = ({ contests }) => {
   );
 };
 
-export default ContestsTable;
+export default Cartegories;

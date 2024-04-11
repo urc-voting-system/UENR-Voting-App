@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import logo from "../assets/logo.png";
-import ContestsTable from "../Components/ContestsTable";
+import ContestsTable from "../Components/Cartegories";
 import { contestsData } from "../Data/contests";
 
 const Contest = ({ sidebarStatus, closeSidebar }) => {

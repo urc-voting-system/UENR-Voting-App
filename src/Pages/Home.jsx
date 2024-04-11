@@ -1,32 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Pages.scss";
 import Sidebar from "../Components/Sidebar";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import try1 from "../assets/try1.png";
 
 const Home = ({ sidebarStatus, closeSidebar }) => {
   const [searchInput, setSearchInput] = useState("");
+  const [eventData, setEventData] = useState([]);
+  const [error, setError] = useState(null);
 
-  const eventData = [
-    {
-      image: try1,
-      title: "Kandema Gospel Awards",
-    },
-    {
-      image: try1,
-      title: "URC awards",
-    },
-    {
-      image: try1,
-      title: "Elesa Awards",
-    },
-    {
-      image: try1,
-      title: "GHIE Awards",
-    },
-  ];
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/events");
+        if (!response.ok) {
+          throw new Error("Error Please try again");
+        }
+        const data = await response.json();
+        console.log("Fetched data:", data);
+        setEventData(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
   };
